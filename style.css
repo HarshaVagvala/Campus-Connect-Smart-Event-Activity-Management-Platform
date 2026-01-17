@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* ===== NAVBAR ===== */
+
 header {
   background: #ffffff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -68,7 +68,7 @@ header {
   cursor: pointer;
 }
 
-/* ===== HERO ===== */
+
 .hero {
   background: linear-gradient(120deg, #1e3a8a, #38bdf8);
   color: white;
@@ -101,7 +101,7 @@ header {
   background: #e5e7eb;
 }
 
-/* ===== SECTIONS ===== */
+
 .section {
   max-width: 1100px;
   margin: auto;
@@ -121,7 +121,7 @@ header {
   color: #4b5563;
 }
 
-/* ===== EVENTS ===== */
+
 .filters {
   display: flex;
   justify-content: center;
@@ -169,7 +169,7 @@ header {
   margin-bottom: 6px;
 }
 
-/* ===== SUBMIT ACTIVITY ===== */
+
 .submit-box {
   margin-top: 50px;
   background: white;
@@ -200,7 +200,7 @@ header {
   height: 90px;
 }
 
-/* ===== GALLERY ===== */
+
 .carousel {
   position: relative;
   max-width: 600px;
@@ -225,7 +225,7 @@ header {
   cursor: pointer;
 }
 
-/* ===== CONTACT ===== */
+
 .contact-form {
   max-width: 450px;
   margin: auto;
@@ -245,7 +245,7 @@ header {
   resize: none;
 }
 
-/* ===== FOOTER ===== */
+
 footer {
   background: #1e3a8a;
   color: white;
@@ -254,7 +254,6 @@ footer {
   font-size: 14px;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
