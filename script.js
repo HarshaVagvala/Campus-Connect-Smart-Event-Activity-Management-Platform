@@ -9,6 +9,7 @@ function showSlides(n) {
     for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
     slides[slideIndex-1].style.display = "block";
 }
+setInterval(() => moveSlide(1), 5000); // Auto-play
 
 // 2. Dark Mode Toggle
 document.getElementById('themeToggle').onclick = function() {
