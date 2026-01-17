@@ -3,19 +3,19 @@ function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('active');
 }
 
-// Close menu on link click (mobile)
+// Close menu on mobile link click
 document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.remove('active');
-    });
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+  });
 });
 
-// Contact Form Validation (3 fields)
+// Contact Form Validation (all fields)
 function validateForm() {
   let name = document.getElementById('name').value;
   let email = document.getElementById('email').value;
   let message = document.getElementById('message').value;
-  if (name === "" || email === "" || message === "") {
+  if(name === "" || email === "" || message === "") {
     alert("Please fill all fields!");
     return false;
   }
@@ -28,7 +28,7 @@ function showAlert() {
   alert("Button clicked successfully!");
 }
 
-// Toggle Events List
+// Toggle Event List (optional)
 function toggleEvents() {
   const eventList = document.getElementById("eventList");
   if(eventList){
@@ -65,7 +65,7 @@ let slideIndex = 0;
 const slides = document.querySelectorAll('.carousel-img');
 
 function showSlides(n){
-  slides.forEach((slide, i) => slide.style.display = 'none');
+  slides.forEach((slide) => slide.style.display = 'none');
   slides[n].style.display = 'block';
 }
 
@@ -79,21 +79,17 @@ function prevSlide(){
   showSlides(slideIndex);
 }
 
-if(slides.length) {
+// Auto carousel
+if(slides.length){
   showSlides(slideIndex);
-  // Auto slide
-  function autoSlide() {
-    nextSlide();
-    setTimeout(autoSlide, 4000);
-  }
-  autoSlide();
+  setInterval(nextSlide, 4000);
 }
 
 // Smooth scroll for nav links
 document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e){
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target) target.scrollIntoView({ behavior: 'smooth' });
-    });
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) target.scrollIntoView({ behavior: 'smooth' });
+  });
 });
