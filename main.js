@@ -1,60 +1,70 @@
-// Mobile Menu Toggle
+/* ================= MOBILE MENU ================= */
 function toggleMenu() {
-  document.querySelector('.nav-links').classList.toggle('active');
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
 }
 
-// Close menu on mobile link click
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.remove('active');
-  });
-});
-
-// Contact Form Validation
+/* ================= CONTACT / ACTIVITY FORM VALIDATION ================= */
 function validateForm() {
-  let name = document.getElementById('name').value;
-  let email = document.getElementById('email').value;
-  let message = document.getElementById('message').value;
-  if (name === "" || email === "" || message === "") {
+  const name = document.getElementById('name')?.value;
+  const email = document.getElementById('email')?.value;
+  const message = document.getElementById('message')?.value;
+
+  if (!name || !email || !message) {
     alert("Please fill all fields!");
     return false;
   }
-  alert("Message sent successfully!");
-  return true;
+
+  alert("Form submitted successfully!");
+  return false; // prevent actual submission (static project)
 }
 
-// Button Click Alert
-function showAlert() {
-  alert("Explore Events clicked!");
-}
-
-// Events Page Dynamic Cards
+/* ================= EVENTS PAGE DYNAMIC CARDS ================= */
 const events = [
-  { title: "Tech Fest", date: "2026-02-01", venue: "Auditorium", desc: "Annual tech festival" },
-  { title: "Sports Day", date: "2026-02-10", venue: "Ground", desc: "Intercollege sports events" },
-  { title: "Cultural Night", date: "2026-02-20", venue: "Auditorium", desc: "Music & dance performances" }
+  {
+    title: "Tech Fest",
+    date: "2026-02-01",
+    venue: "Auditorium",
+    desc: "Annual tech festival"
+  },
+  {
+    title: "Sports Day",
+    date: "2026-02-10",
+    venue: "Ground",
+    desc: "Intercollege sports events"
+  },
+  {
+    title: "Cultural Night",
+    date: "2026-02-20",
+    venue: "Auditorium",
+    desc: "Music & dance performances"
+  }
 ];
 
 const eventContainer = document.getElementById('event-container');
+
 if (eventContainer) {
   events.forEach(event => {
-    let card = document.createElement('div');
+    const card = document.createElement('div');
     card.className = 'event-card';
-    card.innerHTML = `<h3>${event.title}</h3>
-                      <p><strong>Date:</strong> ${event.date}</p>
-                      <p><strong>Venue:</strong> ${event.venue}</p>
-                      <p>${event.desc}</p>`;
+    card.innerHTML = `
+      <h3>${event.title}</h3>
+      <p><strong>Date:</strong> ${event.date}</p>
+      <p><strong>Venue:</strong> ${event.venue}</p>
+      <p>${event.desc}</p>
+    `;
     eventContainer.appendChild(card);
   });
 }
 
-// Gallery Carousel
+/* ================= GALLERY CAROUSEL WITH AUTO SLIDE + FADE ================= */
 let slideIndex = 0;
 const slides = document.querySelectorAll('.carousel-img');
+let autoSlideInterval;
 
 function showSlides(n) {
-  slides.forEach(slide => slide.style.display = 'none');
-  slides[n].style.display = 'block';
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[n].classList.add('active');
 }
 
 function nextSlide() {
@@ -67,7 +77,15 @@ function prevSlide() {
   showSlides(slideIndex);
 }
 
-if (slides.length) {
-  showSlides(slideIndex);
-  setInterval(nextSlide, 3000);
+function startAutoSlide() {
+  autoSlideInterval = setInterval(nextSlide, 3000);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+if (slides.length > 0) {
+  slides[0].classList.add('active');
+  startAutoSlide();
 }
