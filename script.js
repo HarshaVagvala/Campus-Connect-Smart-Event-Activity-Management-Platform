@@ -1,35 +1,30 @@
-function register() {
-  alert("Registered Successfully!");
+const slides = document.querySelectorAll('.carousel-images .slide');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+let current = 0;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if(i === index) slide.classList.add('active');
+    });
 }
 
-function submitForm() {
-  let activity = document.getElementById("activity").value;
-  let email = document.getElementById("email").value;
-  let desc = document.getElementById("desc").value;
+// Next & Prev buttons
+next.addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+});
 
-  if (activity === "" || email === "" || desc === "") {
-    alert("Please fill all fields");
-    return false;
-  }
+prev.addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+});
 
-  alert("Activity submitted successfully!");
-  return false;
-}
+// Auto-slide every 3 seconds
+setInterval(() => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+}, 3000);
 
-function filterEvents(type) {
-  let cards = document.querySelectorAll(".event-card");
-
-  cards.forEach(card => {
-    if (type === "all") {
-      card.style.display = "block";
-    } else if (card.classList.contains(type)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
-
-function toggleMode() {
-  document.body.classList.toggle("dark");
-}
