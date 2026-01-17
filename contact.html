@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Campus Connect</title>
+  <title>Campus Connect - Contact</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Navigation -->
   <nav>
     <div class="logo">Campus Connect</div>
     <ul class="nav-links">
@@ -14,14 +16,15 @@
       <li><a href="about.html">About</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
   </nav>
 
+  <!-- Contact Form -->
   <section class="contact">
     <h1>Contact Us</h1>
-    <form id="contactForm" onsubmit="return validateForm()">
+    <form onsubmit="return validateForm()">
       <input type="text" id="name" placeholder="Your Name">
       <input type="email" id="email" placeholder="Your Email">
       <textarea id="message" placeholder="Your Message"></textarea>
@@ -30,8 +33,9 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Campus Connect. All rights reserved.</p>
+    <p>© 2026 Campus Connect | MCA Applied Learning Project</p>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>
