@@ -10,12 +10,12 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-// Contact Form Validation (all fields)
+// Contact Form Validation
 function validateForm() {
   let name = document.getElementById('name').value;
   let email = document.getElementById('email').value;
   let message = document.getElementById('message').value;
-  if(name === "" || email === "" || message === "") {
+  if (name === "" || email === "" || message === "") {
     alert("Please fill all fields!");
     return false;
   }
@@ -25,26 +25,18 @@ function validateForm() {
 
 // Button Click Alert
 function showAlert() {
-  alert("Button clicked successfully!");
-}
-
-// Toggle Event List (optional)
-function toggleEvents() {
-  const eventList = document.getElementById("eventList");
-  if(eventList){
-    eventList.style.display = eventList.style.display === "none" ? "block" : "none";
-  }
+  alert("Explore Events clicked!");
 }
 
 // Events Page Dynamic Cards
 const events = [
-  {title: "Tech Fest", date: "2026-02-01", venue: "Auditorium", desc: "Annual tech festival"},
-  {title: "Sports Day", date: "2026-02-10", venue: "Ground", desc: "Intercollege sports events"},
-  {title: "Cultural Night", date: "2026-02-20", venue: "Auditorium", desc: "Music & dance performances"}
+  { title: "Tech Fest", date: "2026-02-01", venue: "Auditorium", desc: "Annual tech festival" },
+  { title: "Sports Day", date: "2026-02-10", venue: "Ground", desc: "Intercollege sports events" },
+  { title: "Cultural Night", date: "2026-02-20", venue: "Auditorium", desc: "Music & dance performances" }
 ];
 
 const eventContainer = document.getElementById('event-container');
-if(eventContainer){
+if (eventContainer) {
   events.forEach(event => {
     let card = document.createElement('div');
     card.className = 'event-card';
@@ -53,10 +45,6 @@ if(eventContainer){
                       <p><strong>Venue:</strong> ${event.venue}</p>
                       <p>${event.desc}</p>`;
     eventContainer.appendChild(card);
-
-    // Hover animation
-    card.addEventListener('mouseenter', () => card.style.transform = 'scale(1.05)');
-    card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
   });
 }
 
@@ -64,32 +52,22 @@ if(eventContainer){
 let slideIndex = 0;
 const slides = document.querySelectorAll('.carousel-img');
 
-function showSlides(n){
-  slides.forEach((slide) => slide.style.display = 'none');
+function showSlides(n) {
+  slides.forEach(slide => slide.style.display = 'none');
   slides[n].style.display = 'block';
 }
 
-function nextSlide(){
+function nextSlide() {
   slideIndex = (slideIndex + 1) % slides.length;
   showSlides(slideIndex);
 }
 
-function prevSlide(){
+function prevSlide() {
   slideIndex = (slideIndex - 1 + slides.length) % slides.length;
   showSlides(slideIndex);
 }
 
-// Auto carousel
-if(slides.length){
+if (slides.length) {
   showSlides(slideIndex);
-  setInterval(nextSlide, 4000);
+  setInterval(nextSlide, 3000);
 }
-
-// Smooth scroll for nav links
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if(target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
