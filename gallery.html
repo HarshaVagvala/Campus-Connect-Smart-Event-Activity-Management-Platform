@@ -3,36 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - Campus Connect</title>
+  <title>Campus Connect - Gallery</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Navigation -->
   <nav>
     <div class="logo">Campus Connect</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="events.html">Events</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
   </nav>
 
+  <!-- Gallery Carousel -->
   <section class="gallery">
-    <h1>Event Gallery</h1>
+    <h1>Campus Gallery</h1>
     <div class="carousel">
-      <img src="images/event1.jpg" alt="Event 1" class="carousel-img">
-      <img src="images/event2.jpg" alt="Event 2" class="carousel-img">
-      <img src="images/event3.jpg" alt="Event 3" class="carousel-img">
-      <button onclick="prevSlide()">&#10094;</button>
-      <button onclick="nextSlide()">&#10095;</button>
+      <img src="images/gallery1.jpg" class="carousel-img" alt="Gallery Image 1">
+      <img src="images/gallery2.jpg" class="carousel-img" alt="Gallery Image 2">
+      <img src="images/gallery3.jpg" class="carousel-img" alt="Gallery Image 3">
     </div>
+    <button onclick="prevSlide()">&#10094; Prev</button>
+    <button onclick="nextSlide()">Next &#10095;</button>
   </section>
 
   <footer>
-    <p>&copy; 2026 Campus Connect. All rights reserved.</p>
+    <p>© 2026 Campus Connect | MCA Applied Learning Project</p>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>
