@@ -3,43 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Connect | Professional Event Hub</title>
-    <!-- Professional Google Font: Inter -->
+    <title>Campus Connect | Professional Event Management</title>
+    <!-- Google Fonts: Inter for a professional look -->
     <link href="https://fonts.googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">Campus<span>Connect</span></div>
-        <ul class="nav-links" id="navLinks">
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#events">Events</a></li>
             <li><button id="themeToggle" class="btn-toggle">Toggle Mode</button></li>
         </ul>
-        <div class="hamburger" id="hamburger">☰</div>
     </nav>
 
-    <!-- Centered Professional Carousel -->
-    <section class="carousel-section" id="home">
-        <div class="carousel-container">
-            <div class="carousel-slide fade">
-                <img src="images/ai-workshop.jpg" alt="AI Workshop">
-                <div class="carousel-caption">
-                    <h1>Manage Your Campus Life</h1>
-                    <p>Stay updated with the latest AI & ML workshops, seminars, and fests.</p>
-                </div>
-            </div>
-            <div class="carousel-slide fade">
-                <img src="images/event2.jpg" alt="Spring Fest">
-                <div class="carousel-caption">
-                    <h1>Annual Spring Fest 2026</h1>
-                    <p>Experience cultural excellence and student creativity.</p>
-                </div>
-            </div>
-            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Manage Your Campus Life</h1>
+            <p>Stay updated with the latest workshops, seminars, and fests.</p>
         </div>
-    </section>
+    </header>
 
     <section id="events" class="event-section">
         <div class="section-container">
@@ -49,8 +33,9 @@
                 <button class="filter-btn" onclick="filterEvents('workshop')">Workshops</button>
                 <button class="filter-btn" onclick="filterEvents('fest')">Fests</button>
             </div>
+            
             <div class="event-grid" id="eventGrid">
-                <!-- Event cards go here -->
+                <!-- Event cards will stay here -->
             </div>
         </div>
     </section>
@@ -61,11 +46,15 @@
             <form id="activityForm">
                 <div class="input-group">
                     <label>Activity Name</label>
-                    <input type="text" id="actName" placeholder="Event title" required>
+                    <input type="text" id="actName" placeholder="Enter activity name" required>
                 </div>
                 <div class="input-group">
                     <label>Organizer Email</label>
-                    <input type="email" id="actEmail" placeholder="admin@college.edu" required>
+                    <input type="email" id="actEmail" placeholder="name@college.edu" required>
+                </div>
+                <div class="input-group">
+                    <label>Brief Description</label>
+                    <textarea id="actDesc" placeholder="Describe the event..."></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Submit Request</button>
             </form>
