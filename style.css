@@ -35,3 +35,4 @@ input, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px
 
 .prev, .next { cursor: pointer; position: absolute; top: 50%; padding: 16px; color: white; font-weight: bold; background: rgba(0,0,0,0.3); border-radius: 50%; }
 .next { right: 10px; } .prev { left: 10px; }
+ 
