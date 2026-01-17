@@ -1,44 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campus Connect - Home</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connect | Professional Event Hub</title>
+    <!-- Professional Typography -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">Campus<span>Connect</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><button id="themeToggle" class="btn-toggle">Toggle Mode</button></li>
+        </ul>
+    </nav>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">Campus Connect</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  </nav>
+    <!-- Professional Carousel -->
+    <section class="carousel-section" id="home">
+        <div class="carousel-container">
+            <div class="carousel-slide fade">
+                <img src="images/ai-workshop.jpg" alt="AI Workshop">
+                <div class="carousel-caption">
+                    <h1>Manage Your Campus Life</h1>
+                    <p>Stay updated with workshops, seminars, and fests.</p>
+                </div>
+            </div>
+            <div class="carousel-slide fade">
+                <img src="images/event2.jpg" alt="Spring Fest">
+                <div class="carousel-caption">
+                    <h1>Annual Spring Fest 2026</h1>
+                    <p>Experience creativity and cultural excellence.</p>
+                </div>
+            </div>
+            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+        </div>
+    </section>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1>Welcome to Campus Connect</h1>
-    <p>Your one-stop platform for campus events and activities</p>
-    <button onclick="showAlert()">Explore Events</button>
-  </header>
+    <!-- Centered Content Wrapper -->
+    <main class="main-container">
+        <section id="events" class="event-section">
+            <h2>Upcoming Events</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterEvents('all')">All</button>
+                <button class="filter-btn" onclick="filterEvents('workshop')">Workshops</button>
+                <button class="filter-btn" onclick="filterEvents('fest')">Fests</button>
+            </div>
+            <div class="event-grid" id="eventGrid">
+                <!-- Cards will stay here -->
+            </div>
+        </section>
 
-  <!-- About Preview Section -->
-  <section class="home-about">
-    <h2>About the Platform</h2>
-    <p>Campus Connect is a modern and responsive platform to showcase campus events, activities, and announcements in an interactive and user-friendly way.</p>
-    <a href="about.html">Read More</a>
-  </section>
+        <section class="form-section">
+            <div class="form-card">
+                <h3>Submit a New Activity</h3>
+                <form id="activityForm">
+                    <input type="text" id="actName" placeholder="Activity Name" required>
+                    <input type="email" id="actEmail" placeholder="Organizer Email" required>
+                    <textarea id="actDesc" placeholder="Brief Description"></textarea>
+                    <button type="submit" class="btn-submit">Submit Request</button>
+                </form>
+                <p id="formFeedback"></p>
+            </div>
+        </section>
+    </main>
 
-  <footer>
-    <p>© 2026 Campus Connect | MCA Applied Learning Project</p>
-  </footer>
-
-  <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
