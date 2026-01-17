@@ -1,67 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Connect | Professional Event Management</title>
-    <!-- Google Fonts: Inter for a professional look -->
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="logo">Campus<span>Connect</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><button id="themeToggle" class="btn-toggle">Toggle Mode</button></li>
-        </ul>
-    </nav>
-
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <h1>Manage Your Campus Life</h1>
-            <p>Stay updated with the latest workshops, seminars, and fests.</p>
+<!-- Feature 4: Professional Image Carousel -->
+<section class="carousel-section">
+    <div class="carousel-container">
+        <div class="carousel-slide fade">
+            <img src="images/ai-workshop.jpg" alt="AI Workshop">
+            <div class="carousel-caption">Join the AI Revolution 2026</div>
         </div>
-    </header>
-
-    <section id="events" class="event-section">
-        <div class="section-container">
-            <h2>Upcoming Events</h2>
-            <div class="filter-container">
-                <button class="filter-btn active" onclick="filterEvents('all')">All</button>
-                <button class="filter-btn" onclick="filterEvents('workshop')">Workshops</button>
-                <button class="filter-btn" onclick="filterEvents('fest')">Fests</button>
-            </div>
-            
-            <div class="event-grid" id="eventGrid">
-                <!-- Event cards will stay here -->
-            </div>
+        <div class="carousel-slide fade">
+            <img src="images/event2.jpg" alt="Spring Fest">
+            <div class="carousel-caption">Spring Fest: Cultural Excellence</div>
         </div>
-    </section>
-
-    <section class="form-section">
-        <div class="form-container">
-            <h3>Submit a New Activity</h3>
-            <form id="activityForm">
-                <div class="input-group">
-                    <label>Activity Name</label>
-                    <input type="text" id="actName" placeholder="Enter activity name" required>
-                </div>
-                <div class="input-group">
-                    <label>Organizer Email</label>
-                    <input type="email" id="actEmail" placeholder="name@college.edu" required>
-                </div>
-                <div class="input-group">
-                    <label>Brief Description</label>
-                    <textarea id="actDesc" placeholder="Describe the event..."></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Submit Request</button>
-            </form>
-            <p id="formFeedback"></p>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </div>
+    <!-- Dot Indicators -->
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+</section>
