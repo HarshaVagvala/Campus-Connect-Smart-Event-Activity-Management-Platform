@@ -51,14 +51,21 @@
 
 <!-- Submit Activity -->
 <section class="submit">
-  <h2>Submit an Activity</h2>
-  <form onsubmit="return submitForm()">
-    <input type="text" id="activity" placeholder="Activity Name">
-    <input type="email" id="email" placeholder="admin@college.edu">
-    <textarea id="desc" placeholder="Brief Description"></textarea>
+  <form onsubmit="return validateForm()">
+
+    <h2 class="form-title">Submit an Activity</h2>
+
+    <input type="text" id="name" placeholder="Activity Name" required>
+
+    <input type="email" placeholder="admin@college.edu" required>
+
+    <textarea placeholder="Brief Description" required></textarea>
+
     <button type="submit">Submit Request</button>
+
   </form>
 </section>
+
 
 <script src="script.js"></script>
 </body>
