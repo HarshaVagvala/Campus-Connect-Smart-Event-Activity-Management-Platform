@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navbar with two-color logo -->
     <nav class="navbar">
         <div class="logo">Campus<span>Connect</span></div>
         <ul class="nav-links" id="navLinks">
@@ -18,29 +19,15 @@
         </ul>
     </nav>
 
-    <!-- Interactive Carousel (Feature 1) -->
-    <section class="carousel-section" id="home">
-        <div class="carousel-container">
-            <div class="carousel-slide fade">
-                <img src="images/ai-workshop.jpg" alt="AI Workshop">
-                <div class="carousel-caption">
-                    <h1>Manage Your Campus Life</h1>
-                    <p>Stay updated with workshops, seminars, and fests.</p>
-                </div>
-            </div>
-            <div class="carousel-slide fade">
-                <img src="images/event2.jpg" alt="Spring Fest">
-                <div class="carousel-caption">
-                    <h1>Spring Fest 2026</h1>
-                    <p>Experience creativity and cultural excellence.</p>
-                </div>
-            </div>
-            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    <!-- Static Hero Section (Exactly like the image) -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Manage Your Campus Life</h1>
+            <p>Stay updated with the latest workshops, seminars, and fests.</p>
         </div>
-    </section>
+    </header>
 
-    <!-- Event Section (Feature 2: Filtering) -->
+    <!-- Event Section -->
     <section id="events" class="event-section">
         <div class="section-container">
             <h2>Upcoming Events</h2>
@@ -50,25 +37,12 @@
                 <button class="filter-btn" onclick="filterEvents('fest')">Fests</button>
             </div>
             <div class="event-grid" id="eventGrid">
-                <div class="event-card" data-category="workshop">
-                    <img src="images/ai-workshop.jpg" alt="AI">
-                    <div class="card-content">
-                        <h3>AI Workshop</h3>
-                        <button class="btn-reg" onclick="showAlert('AI Workshop')">Register</button>
-                    </div>
-                </div>
-                <div class="event-card" data-category="fest">
-                    <img src="images/event2.jpg" alt="Fest">
-                    <div class="card-content">
-                        <h3>Spring Fest</h3>
-                        <button class="btn-reg" onclick="showAlert('Spring Fest')">Register</button>
-                    </div>
-                </div>
+                <!-- Event cards go here (ensure you add cards in JS or HTML) -->
             </div>
         </div>
     </section>
 
-    <!-- Activity Form (Feature 3: Validation) -->
+    <!-- Activity Form -->
     <section class="form-section">
         <div class="form-card">
             <h3>Submit an Activity</h3>
@@ -85,4 +59,3 @@
     <script src="script.js"></script>
 </body>
 </html>
- 
