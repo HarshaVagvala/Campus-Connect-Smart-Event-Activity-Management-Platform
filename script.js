@@ -11,7 +11,7 @@ function showSlide(index) {
     });
 }
 
-// Next & Prev buttons
+
 next.addEventListener('click', () => {
     current = (current + 1) % slides.length;
     showSlide(current);
@@ -22,7 +22,7 @@ prev.addEventListener('click', () => {
     showSlide(current);
 });
 
-// Auto-slide every 3 seconds
+
 setInterval(() => {
     current = (current + 1) % slides.length;
     showSlide(current);
