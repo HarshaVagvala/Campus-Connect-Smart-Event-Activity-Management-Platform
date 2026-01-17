@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Connect | Professional Event Hub</title>
-    <!-- Professional Typography -->
+    <!-- Professional Google Font: Inter -->
     <link href="https://fonts.googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">Campus<span>Connect</span></div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#events">Events</a></li>
-            <li><button id="themeToggle" class="btn-toggle">Toggle Mode</button></li>
+            <li><button id="themeToggle" class="btn-toggle">Dark Mode</button></li>
         </ul>
     </nav>
 
-    <!-- Professional Carousel -->
+    <!-- Interactive Carousel (Feature 1) -->
     <section class="carousel-section" id="home">
         <div class="carousel-container">
             <div class="carousel-slide fade">
@@ -31,7 +31,7 @@
             <div class="carousel-slide fade">
                 <img src="images/event2.jpg" alt="Spring Fest">
                 <div class="carousel-caption">
-                    <h1>Annual Spring Fest 2026</h1>
+                    <h1>Spring Fest 2026</h1>
                     <p>Experience creativity and cultural excellence.</p>
                 </div>
             </div>
@@ -40,9 +40,9 @@
         </div>
     </section>
 
-    <!-- Centered Content Wrapper -->
-    <main class="main-container">
-        <section id="events" class="event-section">
+    <!-- Event Section (Feature 2: Filtering) -->
+    <section id="events" class="event-section">
+        <div class="section-container">
             <h2>Upcoming Events</h2>
             <div class="filter-container">
                 <button class="filter-btn active" onclick="filterEvents('all')">All</button>
@@ -50,23 +50,37 @@
                 <button class="filter-btn" onclick="filterEvents('fest')">Fests</button>
             </div>
             <div class="event-grid" id="eventGrid">
-                <!-- Cards will stay here -->
+                <div class="event-card" data-category="workshop">
+                    <img src="images/ai-workshop.jpg" alt="AI">
+                    <div class="card-content">
+                        <h3>AI Workshop</h3>
+                        <button class="btn-reg" onclick="showAlert('AI Workshop')">Register</button>
+                    </div>
+                </div>
+                <div class="event-card" data-category="fest">
+                    <img src="images/event2.jpg" alt="Fest">
+                    <div class="card-content">
+                        <h3>Spring Fest</h3>
+                        <button class="btn-reg" onclick="showAlert('Spring Fest')">Register</button>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="form-section">
-            <div class="form-card">
-                <h3>Submit a New Activity</h3>
-                <form id="activityForm">
-                    <input type="text" id="actName" placeholder="Activity Name" required>
-                    <input type="email" id="actEmail" placeholder="Organizer Email" required>
-                    <textarea id="actDesc" placeholder="Brief Description"></textarea>
-                    <button type="submit" class="btn-submit">Submit Request</button>
-                </form>
-                <p id="formFeedback"></p>
-            </div>
-        </section>
-    </main>
+    <!-- Activity Form (Feature 3: Validation) -->
+    <section class="form-section">
+        <div class="form-card">
+            <h3>Submit an Activity</h3>
+            <form id="activityForm">
+                <input type="text" id="actName" placeholder="Activity Name" required>
+                <input type="email" id="actEmail" placeholder="admin@college.edu" required>
+                <textarea id="actDesc" placeholder="Brief Description"></textarea>
+                <button type="submit" class="btn-submit">Submit Request</button>
+            </form>
+            <p id="formFeedback"></p>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
