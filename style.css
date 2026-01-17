@@ -42,6 +42,14 @@ form {
   text-align: center;
 }
 
+.form-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #333;
+}
+
+
 /* INPUT ALIGNMENT */
 form input,
 form textarea {
