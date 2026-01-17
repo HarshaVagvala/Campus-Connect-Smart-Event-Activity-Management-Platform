@@ -1,11 +1,13 @@
-// Feature 4: Carousel Logic
+// Carousel Logic for Stage 2
 let slideIndex = 1;
 showSlides(slideIndex);
 
+// Next/previous controls
 function moveSlide(n) {
     showSlides(slideIndex += n);
 }
 
+// Thumbnail image controls
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
@@ -29,5 +31,7 @@ function showSlides(n) {
     dots[slideIndex-1].className += " active";
 }
 
-// Auto-play feature
-setInterval(() => moveSlide(1), 5000);
+// Auto-Advance Slides every 5 seconds
+setInterval(() => {
+    moveSlide(1);
+}, 5000);
