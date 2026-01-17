@@ -3,7 +3,14 @@ function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('active');
 }
 
-// Contact Form Validation
+// Close menu on link click (mobile)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+    });
+});
+
+// Contact Form Validation (3 fields)
 function validateForm() {
   let name = document.getElementById('name').value;
   let email = document.getElementById('email').value;
@@ -14,6 +21,19 @@ function validateForm() {
   }
   alert("Message sent successfully!");
   return true;
+}
+
+// Button Click Alert
+function showAlert() {
+  alert("Button clicked successfully!");
+}
+
+// Toggle Events List
+function toggleEvents() {
+  const eventList = document.getElementById("eventList");
+  if(eventList){
+    eventList.style.display = eventList.style.display === "none" ? "block" : "none";
+  }
 }
 
 // Events Page Dynamic Cards
@@ -33,22 +53,47 @@ if(eventContainer){
                       <p><strong>Venue:</strong> ${event.venue}</p>
                       <p>${event.desc}</p>`;
     eventContainer.appendChild(card);
+
+    // Hover animation
+    card.addEventListener('mouseenter', () => card.style.transform = 'scale(1.05)');
+    card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
   });
 }
 
 // Gallery Carousel
 let slideIndex = 0;
 const slides = document.querySelectorAll('.carousel-img');
+
 function showSlides(n){
   slides.forEach((slide, i) => slide.style.display = 'none');
   slides[n].style.display = 'block';
 }
+
 function nextSlide(){
   slideIndex = (slideIndex + 1) % slides.length;
   showSlides(slideIndex);
 }
+
 function prevSlide(){
   slideIndex = (slideIndex - 1 + slides.length) % slides.length;
   showSlides(slideIndex);
 }
-if(slides.length) showSlides(slideIndex);
+
+if(slides.length) {
+  showSlides(slideIndex);
+  // Auto slide
+  function autoSlide() {
+    nextSlide();
+    setTimeout(autoSlide, 4000);
+  }
+  autoSlide();
+}
+
+// Smooth scroll for nav links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
