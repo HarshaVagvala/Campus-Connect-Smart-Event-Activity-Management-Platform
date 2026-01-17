@@ -1,36 +1,42 @@
-/* Carousel Styles */
+/* Carousel Container - Centered and Professional */
 .carousel-section {
-    padding: 2rem 0;
-    background: var(--.bg-dark);
+    padding: 40px 0;
+    background-color: #f8fafc;
 }
 
 .carousel-container {
-    max-width: 900px;
+    max-width: 1100px;
     position: relative;
-    margin: 0 auto; /* Centering */
+    margin: 0 auto; /* Centers the carousel */
+    border-radius: 16px;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .carousel-slide { display: none; }
-.carousel-slide img { 
-    width: 100%; 
-    height: 400px; 
-    object-fit: cover; 
+
+.carousel-slide img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    filter: brightness(0.8);
 }
 
-/* Caption styling */
+/* Caption - Professional Tech Styling */
 .carousel-caption {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(16, 21, 133, 0.8);
+    bottom: 50px;
+    left: 50px;
     color: white;
-    padding: 10px 25px;
-    border-radius: 30px;
-    font-weight: 600;
+    text-align: left;
+    max-width: 500px;
+}
+
+.carousel-caption h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 /* Arrows */
@@ -39,35 +45,32 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 16px;
+    padding: 20px;
     color: white;
     font-weight: bold;
     font-size: 24px;
     transition: 0.3s;
-    background: rgba(0,0,0,0.3);
+    background: rgba(16, 21, 133, 0.4);
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 20px;
     text-decoration: none;
 }
 
 .next { right: 0; }
-.prev:hover, .next:hover { background: var(--primary); }
+.prev:hover, .next:hover { background: #101585; }
 
-/* Animation */
-.fade {
-    animation: fadeAnim 1.5s;
-}
-@keyframes fadeAnim {
-    from {opacity: .4} to {opacity: 1}
-}
-
-.dot-container { text-align: center; padding: 10px; }
+/* Indicator Dots */
+.dot-container { text-align: center; margin-top: -30px; position: relative; z-index: 10; }
 .dot {
-    height: 12px; width: 12px;
+    height: 10px; width: 10px;
     margin: 0 5px;
-    background-color: #bbb;
+    background-color: rgba(255,255,255,0.5);
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
 }
-.dot.active { background-color: var(--primary); }
+.dot.active { background-color: white; width: 30px; border-radius: 10px; }
+
+/* Smooth Fade Effect */
+.fade { animation: fadeEffect 1.2s; }
+@keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
