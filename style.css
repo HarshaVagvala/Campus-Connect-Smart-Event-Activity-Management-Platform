@@ -1,4 +1,21 @@
 /* EVENTS SECTION CENTER FIX */
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Campus color */
+.logo .campus {
+  color: #1e3a8a; /* Deep Blue */
+}
+
+/* Connect color */
+.logo .connect {
+  color: #38bdf8; /* Light Blue */
+  margin-left: 4px;
+}
+
 .events {
   padding: 60px 20px;
   text-align: center;
