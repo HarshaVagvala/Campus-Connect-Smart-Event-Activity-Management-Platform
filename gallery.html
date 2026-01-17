@@ -8,29 +8,29 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <div class="logo">Campus Connect</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="events.html">Events</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </nav>
 
-  <!-- Gallery Carousel -->
   <section class="gallery">
     <h1>Campus Gallery</h1>
     <div class="carousel">
-      <img src="images/gallery1.jpg" class="carousel-img" alt="Gallery Image 1">
-      <img src="images/gallery2.jpg" class="carousel-img" alt="Gallery Image 2">
-      <img src="images/gallery3.jpg" class="carousel-img" alt="Gallery Image 3">
+      <img src="images/gallery1.jpg" class="carousel-img" alt="Gallery 1">
+      <img src="images/gallery2.jpg" class="carousel-img" alt="Gallery 2">
+      <img src="images/gallery3.jpg" class="carousel-img" alt="Gallery 3">
     </div>
-    <button onclick="prevSlide()">&#10094; Prev</button>
-    <button onclick="nextSlide()">Next &#10095;</button>
+    <div class="carousel-controls">
+      <button onclick="prevSlide()">❮ Prev</button>
+      <button onclick="nextSlide()">Next ❯</button>
+    </div>
   </section>
 
   <footer>
