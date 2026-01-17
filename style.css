@@ -1,116 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background: #f5f7fb;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 40px;
-  background: white;
-  align-items: center;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #1a2ca0;
-}
-
-.nav-links a, .nav-links button {
-  margin-left: 20px;
-  text-decoration: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* Hero */
-.hero {
-  background: linear-gradient(135deg, #0b157a, #1a2ca0);
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-/* Events */
+/* EVENTS SECTION CENTER FIX */
 .events {
   padding: 60px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.filters button {
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  background: #e0e5ff;
+/* FILTER BUTTONS CENTER */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
 }
 
+/* EVENT CARDS CENTER */
 .event-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
-  margin-top: 30px;
   flex-wrap: wrap;
 }
 
-.event-card {
-  background: white;
-  padding: 25px;
-  width: 250px;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.event-card button {
-  margin-top: 10px;
-  padding: 8px 20px;
-  background: #1a2ca0;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-/* Submit */
+/* SUBMIT ACTIVITY CENTER FIX */
 .submit {
   padding: 60px 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
+/* FORM CENTER & CLEAN */
 form {
   background: white;
   padding: 30px;
-  width: 400px;
+  width: 420px;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  text-align: center;
 }
 
-form input, textarea {
+/* INPUT ALIGNMENT */
+form input,
+form textarea {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
 }
-
-form button {
-  width: 100%;
-  padding: 12px;
-  background: #0b157a;
-  color: white;
-  border: none;
+section {
+  margin-bottom: 80px;
 }
