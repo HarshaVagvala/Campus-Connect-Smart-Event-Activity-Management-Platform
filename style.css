@@ -1,76 +1,80 @@
-/* Carousel Container - Centered and Professional */
-.carousel-section {
-    padding: 40px 0;
-    background-color: #f8fafc;
+:root {
+    --primary: #101585; /* Midnight Blue for authority */
+    --accent: #3E92CC;  /* Steel Blue accent */
+    --bg: #F8FAFC;      /* Clean off-white background */
+    --text: #1E293B;
+    --font: 'Inter', sans-serif; /* Professional Google Font */
 }
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); }
+
+/* Centered Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 10%;
+    background: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Centered Image Carousel */
 .carousel-container {
     max-width: 1100px;
+    margin: 40px auto; /* Centers the carousel horizontally */
     position: relative;
-    margin: 0 auto; /* Centers the carousel */
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
-
-.carousel-slide { display: none; }
 
 .carousel-slide img {
     width: 100%;
-    height: 450px;
+    height: 500px;
     object-fit: cover;
-    filter: brightness(0.8);
+    filter: brightness(0.7);
 }
 
-/* Caption - Professional Tech Styling */
 .carousel-caption {
     position: absolute;
-    bottom: 50px;
-    left: 50px;
-    color: white;
-    text-align: left;
-    max-width: 500px;
-}
-
-.carousel-caption h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-}
-
-/* Arrows */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    padding: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers text over image */
+    text-align: center;
+    color: #fff;
+    width: 80%;
+}
+
+/* Professional Sections */
+.section-container, .form-container {
+    max-width: 1100px;
+    margin: 0 auto; /* Horizontal Centering */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Professional Form Styling */
+#activityForm {
+    max-width: 500px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit {
+    background: var(--primary);
     color: white;
-    font-weight: bold;
-    font-size: 24px;
-    transition: 0.3s;
-    background: rgba(16, 21, 133, 0.4);
-    border-radius: 50%;
-    margin: 0 20px;
-    text-decoration: none;
-}
-
-.next { right: 0; }
-.prev:hover, .next:hover { background: #101585; }
-
-/* Indicator Dots */
-.dot-container { text-align: center; margin-top: -30px; position: relative; z-index: 10; }
-.dot {
-    height: 10px; width: 10px;
-    margin: 0 5px;
-    background-color: rgba(255,255,255,0.5);
-    border-radius: 50%;
-    display: inline-block;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.3s;
 }
-.dot.active { background-color: white; width: 30px; border-radius: 10px; }
 
-/* Smooth Fade Effect */
-.fade { animation: fadeEffect 1.2s; }
-@keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
+.btn-submit:hover { background: var(--accent); }
