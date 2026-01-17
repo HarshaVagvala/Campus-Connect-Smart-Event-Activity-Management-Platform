@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Connect | Event Management</title>
+    <title>Campus Connect | Smart Event Platform</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Feature 1: Navigation with Theme Toggle -->
     <nav class="navbar">
         <div class="logo">Campus<span>Connect</span></div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#events">Events</a></li>
-            <li><button id="themeToggle">Toggle Mode</button></li>
+            <li><button id="themeToggle" class="btn-toggle">Toggle Mode</button></li>
         </ul>
         <div class="hamburger" id="hamburger">☰</div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="home">
         <h1>Manage Your Campus Life</h1>
-        <p>Stay updated with the latest workshops, seminars, and fests.</p>
+        <p>Seamlessly organize and join university activities.</p>
     </header>
 
+    <!-- Feature 2: Event Filtering System -->
     <section id="events" class="event-section">
         <h2>Upcoming Events</h2>
         <div class="filter-container">
@@ -31,30 +33,36 @@
         </div>
         
         <div class="event-grid" id="eventGrid">
-            <!-- Feature 1: Dynamic Event Cards -->
+            <!-- Event Card 1 with NEW Freepik Image -->
             <div class="event-card" data-category="workshop">
-                <img src="images/event1.jpg" alt="AI Workshop">
-                <h3>AI & ML Workshop</h3>
-                <p>Learn the future of tech.</p>
-                <button class="btn-reg" onclick="showAlert('AI Workshop')">Register Now</button>
+                <img src="images/ai-workshop.jpg" alt="AI & ML Workshop Banner">
+                <div class="card-content">
+                    <h3>AI & ML Workshop</h3>
+                    <p>Hands-on session on neural networks and deep learning.</p>
+                    <button class="btn-reg" onclick="showAlert('AI Workshop')">Register Now</button>
+                </div>
             </div>
+
+            <!-- Event Card 2 -->
             <div class="event-card" data-category="fest">
                 <img src="images/event2.jpg" alt="Cultural Fest">
-                <h3>Spring Fest 2026</h3>
-                <p>The biggest cultural event.</p>
-                <button class="btn-reg" onclick="showAlert('Spring Fest')">Register Now</button>
+                <div class="card-content">
+                    <h3>Spring Fest 2026</h3>
+                    <p>The annual cultural extravaganza of the university.</p>
+                    <button class="btn-reg" onclick="showAlert('Spring Fest')">Register Now</button>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Feature 3: Smart Activity Form -->
     <section class="form-section">
         <h3>Submit a New Activity</h3>
-        <!-- Feature 2: Form Validation -->
         <form id="activityForm">
             <input type="text" id="actName" placeholder="Activity Name" required>
-            <input type="email" id="actEmail" placeholder="Organizer Email" required>
-            <textarea id="actDesc" placeholder="Brief Description"></textarea>
-            <button type="submit">Submit Request</button>
+            <input type="email" id="actEmail" placeholder="Organizer College Email (@college.edu)" required>
+            <textarea id="actDesc" placeholder="Brief Event Description"></textarea>
+            <button type="submit" class="btn-submit">Submit Request</button>
         </form>
         <p id="formFeedback"></p>
     </section>
