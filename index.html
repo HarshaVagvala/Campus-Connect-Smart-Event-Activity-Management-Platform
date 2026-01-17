@@ -1,25 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Carousel</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Campus Connect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS LINK -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JS LINK -->
+  <script src="main.js" defer></script>
 </head>
+
 <body>
 
-<div class="carousel">
-    <div class="carousel-images">
-        <img src="images/image1.jpg" class="active" alt="Image 1">
-        <img src="images/image2.jpg" alt="Image 2">
-        <img src="images/image3.jpg" alt="Image 3">
-        <!-- Add more images here -->
-    </div>
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-</div>
+<!-- ================= HEADER / NAVBAR ================= -->
+<header>
+  <nav class="navbar">
+    <h1 class="logo">
+      <span class="campus">Campus</span><span class="connect">Connect</span>
+    </h1>
 
-<script src="script.js"></script>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </nav>
+</header>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="hero">
+  <h2>Welcome to Campus Connect</h2>
+  <p>Your one-stop platform for campus events and activities</p>
+  <a href="#events" class="btn">Explore Events</a>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
+  <h2>About the Platform</h2>
+  <p>
+    Campus Connect is a modern and responsive web platform designed to showcase
+    campus events, activities, and announcements in an interactive and
+    user-friendly manner.
+  </p>
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section id="events" class="section">
+  <h2>Upcoming Events</h2>
+
+  <div class="filters">
+    <button>All</button>
+    <button>Workshops</button>
+    <button>Fests</button>
+  </div>
+
+  <!-- Dynamic cards from JS -->
+  <div id="event-container" class="event-container"></div>
+
+  <!-- ===== Submit Activity (CENTERED) ===== -->
+  <div class="submit-box">
+    <h3>Submit an Activity</h3>
+
+    <form onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Activity Name">
+      <input type="email" id="email" placeholder="admin@college.edu">
+      <textarea id="message" placeholder="Brief Description"></textarea>
+      <button type="submit" class="btn">Submit Request</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="section">
+  <h2>Gallery</h2>
+
+  <div class="carousel">
+    <img src="images/img1.jpg" class="carousel-img">
+    <img src="images/img2.jpg" class="carousel-img">
+    <img src="images/img3.jpg" class="carousel-img">
+
+    <div class="carousel-btns">
+      <button onclick="prevSlide()">❮</button>
+      <button onclick="nextSlide()">❯</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+
+  <form class="contact-form" onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <textarea id="message" placeholder="Your Message"></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p>© 2026 Campus Connect | MCA Applied Learning Project</p>
+</footer>
+
 </body>
 </html>
- 
+
