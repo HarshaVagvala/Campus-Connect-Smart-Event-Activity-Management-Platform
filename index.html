@@ -3,68 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Connect | Smart Event Platform</title>
+    <title>Campus Connect | Professional Event Management</title>
+    <!-- Google Fonts: Inter for a professional look -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Feature 1: Navigation with Theme Toggle -->
     <nav class="navbar">
         <div class="logo">Campus<span>Connect</span></div>
-        <ul class="nav-links" id="navLinks">
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#events">Events</a></li>
             <li><button id="themeToggle" class="btn-toggle">Toggle Mode</button></li>
         </ul>
-        <div class="hamburger" id="hamburger">☰</div>
     </nav>
 
     <header class="hero" id="home">
-        <h1>Manage Your Campus Life</h1>
-        <p>Seamlessly organize and join university activities.</p>
+        <div class="hero-content">
+            <h1>Manage Your Campus Life</h1>
+            <p>Stay updated with the latest workshops, seminars, and fests.</p>
+        </div>
     </header>
 
-    <!-- Feature 2: Event Filtering System -->
     <section id="events" class="event-section">
-        <h2>Upcoming Events</h2>
-        <div class="filter-container">
-            <button class="filter-btn" onclick="filterEvents('all')">All</button>
-            <button class="filter-btn" onclick="filterEvents('workshop')">Workshops</button>
-            <button class="filter-btn" onclick="filterEvents('fest')">Fests</button>
-        </div>
-        
-        <div class="event-grid" id="eventGrid">
-            <!-- Event Card 1 with NEW Freepik Image -->
-            <div class="event-card" data-category="workshop">
-                <img src="images/ai-workshop.jpg" alt="AI & ML Workshop Banner">
-                <div class="card-content">
-                    <h3>AI & ML Workshop</h3>
-                    <p>Hands-on session on neural networks and deep learning.</p>
-                    <button class="btn-reg" onclick="showAlert('AI Workshop')">Register Now</button>
-                </div>
+        <div class="section-container">
+            <h2>Upcoming Events</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterEvents('all')">All</button>
+                <button class="filter-btn" onclick="filterEvents('workshop')">Workshops</button>
+                <button class="filter-btn" onclick="filterEvents('fest')">Fests</button>
             </div>
-
-            <!-- Event Card 2 -->
-            <div class="event-card" data-category="fest">
-                <img src="images/event2.jpg" alt="Cultural Fest">
-                <div class="card-content">
-                    <h3>Spring Fest 2026</h3>
-                    <p>The annual cultural extravaganza of the university.</p>
-                    <button class="btn-reg" onclick="showAlert('Spring Fest')">Register Now</button>
-                </div>
+            
+            <div class="event-grid" id="eventGrid">
+                <!-- Event cards will stay here -->
             </div>
         </div>
     </section>
 
-    <!-- Feature 3: Smart Activity Form -->
     <section class="form-section">
-        <h3>Submit a New Activity</h3>
-        <form id="activityForm">
-            <input type="text" id="actName" placeholder="Activity Name" required>
-            <input type="email" id="actEmail" placeholder="Organizer College Email (@college.edu)" required>
-            <textarea id="actDesc" placeholder="Brief Event Description"></textarea>
-            <button type="submit" class="btn-submit">Submit Request</button>
-        </form>
-        <p id="formFeedback"></p>
+        <div class="form-container">
+            <h3>Submit a New Activity</h3>
+            <form id="activityForm">
+                <div class="input-group">
+                    <label>Activity Name</label>
+                    <input type="text" id="actName" placeholder="Enter activity name" required>
+                </div>
+                <div class="input-group">
+                    <label>Organizer Email</label>
+                    <input type="email" id="actEmail" placeholder="name@college.edu" required>
+                </div>
+                <div class="input-group">
+                    <label>Brief Description</label>
+                    <textarea id="actDesc" placeholder="Describe the event..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Submit Request</button>
+            </form>
+            <p id="formFeedback"></p>
+        </div>
     </section>
 
     <script src="script.js"></script>
