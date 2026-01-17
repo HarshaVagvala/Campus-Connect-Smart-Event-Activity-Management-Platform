@@ -1,80 +1,36 @@
-:root {
-    --primary: #101585; /* Midnight Blue for authority */
-    --accent: #3E92CC;  /* Steel Blue accent */
-    --bg: #F8FAFC;      /* Clean off-white background */
-    --text: #1E293B;
-    --font: 'Inter', sans-serif; /* Professional Google Font */
+/* Smooth Transition for Dark Mode */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font); background: var(--bg); color: var(--text); }
-
-/* Centered Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 10%;
-    background: #fff;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+/* Dark Mode Variables */
+.dark-theme {
+    --bg: #0f172a;
+    --text: #f1f5f9;
+    --white: #1e293b;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
-/* Centered Image Carousel */
-.carousel-container {
-    max-width: 1100px;
-    margin: 40px auto; /* Centers the carousel horizontally */
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    filter: brightness(0.7);
-}
-
-.carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centers text over image */
-    text-align: center;
-    color: #fff;
-    width: 80%;
-}
-
-/* Professional Sections */
-.section-container, .form-container {
-    max-width: 1100px;
-    margin: 0 auto; /* Horizontal Centering */
-    padding: 60px 20px;
-    text-align: center;
-}
-
-/* Professional Form Styling */
-#activityForm {
-    max-width: 500px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    text-align: left;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-.btn-submit {
-    background: var(--primary);
+.dark-theme .navbar, 
+.dark-theme .event-card, 
+.dark-theme #activityForm {
+    background-color: #1e293b;
     color: white;
-    padding: 14px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
+    border: 1px solid #334155;
 }
 
-.btn-submit:hover { background: var(--accent); }
+/* Hover Animations for Buttons */
+.btn-reg, .btn-submit, .filter-btn {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
+}
+
+.btn-reg:hover, .btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(16, 21, 133, 0.4);
+}
+
+/* Event Card Fade-in Animation */
+.event-card {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
