@@ -1,10 +1,10 @@
-/* ================= MOBILE MENU ================= */
+
 function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
   navLinks.classList.toggle('active');
 }
 
-/* ================= CONTACT / ACTIVITY FORM VALIDATION ================= */
+
 function validateForm() {
   const name = document.getElementById('name')?.value;
   const email = document.getElementById('email')?.value;
@@ -19,7 +19,7 @@ function validateForm() {
   return false; // prevent actual submission (static project)
 }
 
-/* ================= EVENTS PAGE DYNAMIC CARDS ================= */
+
 const events = [
   {
     title: "Tech Fest",
@@ -57,7 +57,7 @@ if (eventContainer) {
   });
 }
 
-/* ================= GALLERY CAROUSEL WITH AUTO SLIDE + FADE ================= */
+
 let slideIndex = 0;
 const slides = document.querySelectorAll('.carousel-img');
 let autoSlideInterval;
