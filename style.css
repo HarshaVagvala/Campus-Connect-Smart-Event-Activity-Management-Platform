@@ -1,42 +1,36 @@
-/* Carousel Container - Centered and Professional */
+/* Carousel Styles */
 .carousel-section {
-    padding: 40px 0;
-    background-color: #f8fafc;
+    padding: 2rem 0;
+    background: var(--.bg-dark);
 }
 
 .carousel-container {
-    max-width: 1100px;
+    max-width: 900px;
     position: relative;
-    margin: 0 auto; /* Centers the carousel */
-    border-radius: 16px;
+    margin: 0 auto; /* Centering */
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .carousel-slide { display: none; }
-
-.carousel-slide img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    filter: brightness(0.8);
+.carousel-slide img { 
+    width: 100%; 
+    height: 400px; 
+    object-fit: cover; 
 }
 
-/* Caption - Professional Tech Styling */
+/* Caption styling */
 .carousel-caption {
     position: absolute;
-    bottom: 50px;
-    left: 50px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(16, 21, 133, 0.8);
     color: white;
-    text-align: left;
-    max-width: 500px;
-}
-
-.carousel-caption h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
 }
 
 /* Arrows */
@@ -45,32 +39,35 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 20px;
+    padding: 16px;
     color: white;
     font-weight: bold;
     font-size: 24px;
     transition: 0.3s;
-    background: rgba(16, 21, 133, 0.4);
+    background: rgba(0,0,0,0.3);
     border-radius: 50%;
-    margin: 0 20px;
+    margin: 0 10px;
     text-decoration: none;
 }
 
 .next { right: 0; }
-.prev:hover, .next:hover { background: #101585; }
+.prev:hover, .next:hover { background: var(--primary); }
 
-/* Indicator Dots */
-.dot-container { text-align: center; margin-top: -30px; position: relative; z-index: 10; }
+/* Animation */
+.fade {
+    animation: fadeAnim 1.5s;
+}
+@keyframes fadeAnim {
+    from {opacity: .4} to {opacity: 1}
+}
+
+.dot-container { text-align: center; padding: 10px; }
 .dot {
-    height: 10px; width: 10px;
+    height: 12px; width: 12px;
     margin: 0 5px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
 }
-.dot.active { background-color: white; width: 30px; border-radius: 10px; }
-
-/* Smooth Fade Effect */
-.fade { animation: fadeEffect 1.2s; }
-@keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
+.dot.active { background-color: var(--primary); }
