@@ -275,3 +275,14 @@ footer {
     display: block;
   }
 }
+
+/* ===== GALLERY FADE ANIMATION ===== */
+.carousel-img {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+
