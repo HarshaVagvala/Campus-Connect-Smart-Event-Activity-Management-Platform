@@ -1,22 +1,35 @@
-// 1. Dark Mode Toggle
-document.getElementById('themeToggle').onclick = function() {
-    document.body.classList.toggle('dark-theme');
-};
-
-// 2. Filter Events
-function filterEvents(cat) {
-    let cards = document.querySelectorAll('.event-card');
-    cards.forEach(c => {
-        c.style.display = (cat === 'all' || c.dataset.category === cat) ? "block" : "none";
-    });
+function register() {
+  alert("Registered Successfully!");
 }
 
-// 3. Registration Alert
-function showAlert(name) { alert("Registered for: " + name); }
+function submitForm() {
+  let activity = document.getElementById("activity").value;
+  let email = document.getElementById("email").value;
+  let desc = document.getElementById("desc").value;
 
-// 4. Form Validation
-document.getElementById('activityForm').onsubmit = function(e) {
-    e.preventDefault();
-    document.getElementById('formFeedback').innerText = "Submitted successfully!";
-    this.reset();
-};
+  if (activity === "" || email === "" || desc === "") {
+    alert("Please fill all fields");
+    return false;
+  }
+
+  alert("Activity submitted successfully!");
+  return false;
+}
+
+function filterEvents(type) {
+  let cards = document.querySelectorAll(".event-card");
+
+  cards.forEach(card => {
+    if (type === "all") {
+      card.style.display = "block";
+    } else if (card.classList.contains(type)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+function toggleMode() {
+  document.body.classList.toggle("dark");
+}
